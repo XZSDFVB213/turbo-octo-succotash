@@ -1,0 +1,21 @@
+2026-11-11T16:13:18.741834	DEBUG	todoapp/main.go:29	Initializing postgres connection pool
+2026-11-11T16:13:18.882132	DEBUG	todoapp/main.go:38	Initializing feature	{"feature": "users"}
+2026-11-11T16:13:18.882708	DEBUG	todoapp/main.go:42	Initializing http server
+2026-11-11T16:13:18.882708	WARN	server/server.go:49	Start http server	{"Addr": ":5050"}
+2026-11-11T16:13:24.481069	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "e55a0486-614a-4454-9b47-b64c5be6dfbc", "url": "/api/v1/users/1", "HTTP METHOD": "PATCH", "time": "2026-11-11T13:13:24.481069"}
+2026-11-11T16:13:24.514332	DEBUG	middleware/common.go:69	Done http request	{"request_id": "e55a0486-614a-4454-9b47-b64c5be6dfbc", "url": "/api/v1/users/1", "status code": 200, "latency": "33.2629ms"}
+2026-11-11T16:15:15.211484	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "8aaa14b0-2355-466b-ab13-dea5c94afbb7", "url": "/api/v1/users/1", "HTTP METHOD": "PATCH", "time": "2026-11-11T13:15:15.211484"}
+2026-11-11T16:15:15.218771	DEBUG	middleware/common.go:69	Done http request	{"request_id": "8aaa14b0-2355-466b-ab13-dea5c94afbb7", "url": "/api/v1/users/1", "status code": 200, "latency": "7.2868ms"}
+2026-11-11T16:15:32.163604	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "8494d758-670f-4573-a254-db2a1990edcd", "url": "/api/v1/users/1", "HTTP METHOD": "PATCH", "time": "2026-11-11T13:15:32.163604"}
+2026-11-11T16:15:32.164127	WARN	response/handler.go:53	Decode Request failed	{"request_id": "8494d758-670f-4573-a254-db2a1990edcd", "url": "/api/v1/users/1", "error": "Failed to validate dto: Fullname must be between 3 and 100 symbols: Invalid argument"}
+2026-11-11T16:15:32.164127	DEBUG	middleware/common.go:69	Done http request	{"request_id": "8494d758-670f-4573-a254-db2a1990edcd", "url": "/api/v1/users/1", "status code": 400, "latency": "522.6µs"}
+2026-11-11T16:16:23.334512	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "852d19b1-5e27-4e31-b8c6-a2e7788f7199", "url": "/api/v1/users", "HTTP METHOD": "GET", "time": "2026-11-11T13:16:23.334512"}
+2026-11-11T16:16:23.338066	DEBUG	middleware/common.go:69	Done http request	{"request_id": "852d19b1-5e27-4e31-b8c6-a2e7788f7199", "url": "/api/v1/users", "status code": 200, "latency": "3.5541ms"}
+2026-11-11T16:16:46.659381	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "41a05724-d6cc-4534-af82-502250112473", "url": "/api/v1/users/11", "HTTP METHOD": "PATCH", "time": "2026-11-11T13:16:46.659381"}
+2026-11-11T16:16:46.659914	WARN	response/handler.go:53	Decode Request failed	{"request_id": "41a05724-d6cc-4534-af82-502250112473", "url": "/api/v1/users/11", "error": "Failed to validate dto: PhoneNumber must be between 10 and 15 symbols: Invalid argument"}
+2026-11-11T16:16:46.659914	DEBUG	middleware/common.go:69	Done http request	{"request_id": "41a05724-d6cc-4534-af82-502250112473", "url": "/api/v1/users/11", "status code": 400, "latency": "532.3µs"}
+2026-11-11T16:16:53.917766	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "280e92b9-9d2b-49d9-b00c-4303dd38827e", "url": "/api/v1/users/11", "HTTP METHOD": "PATCH", "time": "2026-11-11T13:16:53.917766"}
+2026-11-11T16:16:53.918279	WARN	response/handler.go:53	Decode Request failed	{"request_id": "280e92b9-9d2b-49d9-b00c-4303dd38827e", "url": "/api/v1/users/11", "error": "Failed to validate dto: `Phone number` can't be NULL: Invalid argument"}
+2026-11-11T16:16:53.918279	DEBUG	middleware/common.go:69	Done http request	{"request_id": "280e92b9-9d2b-49d9-b00c-4303dd38827e", "url": "/api/v1/users/11", "status code": 400, "latency": "512.6µs"}
+2026-11-11T16:17:30.680428	WARN	server/server.go:62	Shutdown http server
+2026-11-11T16:17:30.680428	WARN	server/server.go:69	Http server stopped

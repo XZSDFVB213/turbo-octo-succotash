@@ -1,0 +1,8 @@
+2026-11-11T16:17:33.114174	DEBUG	todoapp/main.go:29	Initializing postgres connection pool
+2026-11-11T16:17:33.243086	DEBUG	todoapp/main.go:38	Initializing feature	{"feature": "users"}
+2026-11-11T16:17:33.243086	DEBUG	todoapp/main.go:42	Initializing http server
+2026-11-11T16:17:33.243086	WARN	server/server.go:49	Start http server	{"Addr": ":5050"}
+2026-11-11T16:17:39.079290	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "bf4a16e7-aabc-477b-8248-8f7e8a1ada19", "url": "/api/v1/users/11", "HTTP METHOD": "PATCH", "time": "2026-11-11T13:17:39.079290"}
+2026-11-11T16:17:39.079891	ERROR	response/handler.go:60	During handle HTTP request get unexpected Panic	{"request_id": "bf4a16e7-aabc-477b-8248-8f7e8a1ada19", "url": "/api/v1/users/11", "error": "unexpected panic: runtime error: invalid memory address or nil pointer dereference"}
+2026-11-11T16:17:50.861310	WARN	server/server.go:62	Shutdown http server
+2026-11-11T16:17:50.861310	WARN	server/server.go:69	Http server stopped

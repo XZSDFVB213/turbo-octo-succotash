@@ -1,0 +1,9 @@
+2026-11-11T16:17:52.214891	DEBUG	todoapp/main.go:29	Initializing postgres connection pool
+2026-11-11T16:17:52.341955	DEBUG	todoapp/main.go:38	Initializing feature	{"feature": "users"}
+2026-11-11T16:17:52.341955	DEBUG	todoapp/main.go:42	Initializing http server
+2026-11-11T16:17:52.342498	WARN	server/server.go:49	Start http server	{"Addr": ":5050"}
+2026-11-11T16:18:00.745038	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "3122a0a9-0c6b-4399-8aa1-1d9ee7d148e3", "url": "/api/v1/users/11", "HTTP METHOD": "PATCH", "time": "2026-11-11T13:18:00.745038"}
+2026-11-11T16:18:00.745545	WARN	response/handler.go:53	Decode Request failed	{"request_id": "3122a0a9-0c6b-4399-8aa1-1d9ee7d148e3", "url": "/api/v1/users/11", "error": "Failed to validate dto: `Phone number` can't be NULL: Invalid argument"}
+2026-11-11T16:18:00.745545	DEBUG	middleware/common.go:69	Done http request	{"request_id": "3122a0a9-0c6b-4399-8aa1-1d9ee7d148e3", "url": "/api/v1/users/11", "status code": 400, "latency": "506.4µs"}
+2026-11-11T16:19:07.023526	WARN	server/server.go:62	Shutdown http server
+2026-11-11T16:19:07.023526	WARN	server/server.go:69	Http server stopped

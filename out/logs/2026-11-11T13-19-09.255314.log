@@ -1,0 +1,11 @@
+2026-11-11T16:19:09.255831	DEBUG	todoapp/main.go:29	Initializing postgres connection pool
+2026-11-11T16:19:09.388651	DEBUG	todoapp/main.go:38	Initializing feature	{"feature": "users"}
+2026-11-11T16:19:09.389189	DEBUG	todoapp/main.go:42	Initializing http server
+2026-11-11T16:19:09.389189	WARN	server/server.go:49	Start http server	{"Addr": ":5050"}
+2026-11-11T16:19:16.693362	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "a6b033b8-d1fa-4510-bd03-5516fcfe3210", "url": "/api/v1/users/11", "HTTP METHOD": "PATCH", "time": "2026-11-11T13:19:16.693362"}
+2026-11-11T16:19:16.709644	DEBUG	middleware/common.go:69	Done http request	{"request_id": "a6b033b8-d1fa-4510-bd03-5516fcfe3210", "url": "/api/v1/users/11", "status code": 200, "latency": "16.2825ms"}
+2026-11-11T16:19:35.976482	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "658b36ea-81be-4128-b4a9-5d5623978cbd", "url": "/api/v1/users/11", "HTTP METHOD": "PATCH", "time": "2026-11-11T13:19:35.976482"}
+2026-11-11T16:19:35.979883	WARN	response/handler.go:53	Failed to patch user	{"request_id": "658b36ea-81be-4128-b4a9-5d5623978cbd", "url": "/api/v1/users/11", "error": "Apply user patch: Validate patched user: Invalid `PhoneNumber`: Invalid argument"}
+2026-11-11T16:19:35.979883	DEBUG	middleware/common.go:69	Done http request	{"request_id": "658b36ea-81be-4128-b4a9-5d5623978cbd", "url": "/api/v1/users/11", "status code": 400, "latency": "3.4007ms"}
+2026-11-11T16:23:10.209987	WARN	server/server.go:62	Shutdown http server
+2026-11-11T16:23:10.209987	WARN	server/server.go:69	Http server stopped

@@ -1,0 +1,17 @@
+2026-11-11T16:04:23.142711	DEBUG	todoapp/main.go:29	Initializing postgres connection pool
+2026-11-11T16:04:23.448316	DEBUG	todoapp/main.go:38	Initializing feature	{"feature": "users"}
+2026-11-11T16:04:23.448843	DEBUG	todoapp/main.go:42	Initializing http server
+2026-11-11T16:04:23.448843	WARN	server/server.go:49	Start http server	{"Addr": ":5050"}
+2026-11-11T16:05:19.117800	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "ed0441ff-2ed3-44c5-986f-0c5cd5b76a12", "url": "/users", "HTTP METHOD": "GET", "time": "2026-11-11T13:05:19.117800"}
+2026-11-11T16:05:19.117800	DEBUG	middleware/common.go:69	Done http request	{"request_id": "ed0441ff-2ed3-44c5-986f-0c5cd5b76a12", "url": "/users", "status code": 404, "latency": "0s"}
+2026-11-11T16:05:33.388016	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "9e9e7aff-c87e-4535-b8d9-f650848bad1a", "url": "/users", "HTTP METHOD": "GET", "time": "2026-11-11T13:05:33.388016"}
+2026-11-11T16:05:33.388016	DEBUG	middleware/common.go:69	Done http request	{"request_id": "9e9e7aff-c87e-4535-b8d9-f650848bad1a", "url": "/users", "status code": 404, "latency": "0s"}
+2026-11-11T16:05:59.325825	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "ba025846-a502-4424-bff1-e1e9d76df800", "url": "/users", "HTTP METHOD": "GET", "time": "2026-11-11T13:05:59.325825"}
+2026-11-11T16:05:59.339666	DEBUG	middleware/common.go:69	Done http request	{"request_id": "ba025846-a502-4424-bff1-e1e9d76df800", "url": "/users", "status code": 404, "latency": "13.8405ms"}
+2026-11-11T16:08:06.612582	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "ff99f730-a125-40a2-97fa-07424fcb552e", "url": "/api/v1/users", "HTTP METHOD": "GET", "time": "2026-11-11T13:08:06.612582"}
+2026-11-11T16:08:06.661779	DEBUG	middleware/common.go:69	Done http request	{"request_id": "ff99f730-a125-40a2-97fa-07424fcb552e", "url": "/api/v1/users", "status code": 200, "latency": "49.1966ms"}
+2026-11-11T16:09:22.021619	DEBUG	middleware/common.go:67	Incoming http request	{"request_id": "d61c20de-33cc-41c0-a0f4-16ce94354bdd", "url": "/api/v1/users/1", "HTTP METHOD": "PATCH", "time": "2026-11-11T13:09:22.021619"}
+2026-11-11T16:09:22.083007	ERROR	response/handler.go:53	Failed to patch user	{"request_id": "d61c20de-33cc-41c0-a0f4-16ce94354bdd", "url": "/api/v1/users/1", "error": "Patch user: Scan error: ERROR: syntax error at or near \"phone_number\" (SQLSTATE 42601)"}
+2026-11-11T16:09:22.083007	DEBUG	middleware/common.go:69	Done http request	{"request_id": "d61c20de-33cc-41c0-a0f4-16ce94354bdd", "url": "/api/v1/users/1", "status code": 500, "latency": "61.3889ms"}
+2026-11-11T16:13:16.240700	WARN	server/server.go:62	Shutdown http server
+2026-11-11T16:13:16.240700	WARN	server/server.go:69	Http server stopped
