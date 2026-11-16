@@ -26,9 +26,9 @@ func NewUserUnitialized(fullname string, phoneNumber *string) User {
 	return NewUser(UninitializedId, UninitializedVersion, fullname, phoneNumber)
 }
 func (u *User) Validate() error {
-	fullNameLength := len([]rune(u.FullName))
-	if fullNameLength < 3 || fullNameLength > 100 {
-		return fmt.Errorf("Invalid `full name` len: %d: %w", fullNameLength, core_errors.ErrInvalidArgument)
+	fullNameLen := len([]rune(u.FullName))
+	if fullNameLen < 3 || fullNameLen > 100 {
+		return fmt.Errorf("Invalid `full name` len: %d: %w", fullNameLen, core_errors.ErrInvalidArgument)
 	}
 	if u.PhoneNumber != nil {
 		phoneNumberLen := len([]rune(*u.PhoneNumber))
@@ -48,6 +48,15 @@ type UserPatch struct {
 	PhoneNumber Nullable[string]
 }
 
+func NewUserPatch(
+	fullName Nullable[string],
+	phoneNumber Nullable[string],
+) UserPatch {
+	return UserPatch{
+		Fullname:    fullName,
+		PhoneNumber: phoneNumber,
+	}
+}
 func (p *UserPatch) Validate() error {
 	if p.Fullname.Set && p.Fullname.Value == nil {
 		return fmt.Errorf("`FullName` can't be patched to NULL:%w", core_errors.ErrInvalidArgument)
