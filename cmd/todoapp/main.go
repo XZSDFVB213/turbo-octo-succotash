@@ -8,7 +8,8 @@ import (
 	"syscall"
 
 	core_logger "github.com/XZSDFVB213/golang-todoapp/internal/core/logger"
-	core_postgres_pool "github.com/XZSDFVB213/golang-todoapp/internal/core/repository/postgres/pool"
+	// core_postgres_pool "github.com/XZSDFVB213/golang-todoapp/internal/core/repository/postgres/pool"
+	core_pgx_pool "github.com/XZSDFVB213/golang-todoapp/internal/core/repository/postgres/pool/pgx"
 	core_http_middleware "github.com/XZSDFVB213/golang-todoapp/internal/core/transport/http/middleware"
 	core_http_server "github.com/XZSDFVB213/golang-todoapp/internal/core/transport/http/server"
 	users_postgres_repository "github.com/XZSDFVB213/golang-todoapp/internal/features/users/repository/postgres"
@@ -27,9 +28,9 @@ func main() {
 	}
 	defer log.Close()
 	log.Debug("Initializing postgres connection pool")
-	pool, err := core_postgres_pool.NewConnectionPool(
-		core_postgres_pool.NewConfigMust(),
+	pool, err := core_pgx_pool.NewPool(
 		ctx,
+		core_pgx_pool.NewConfigMust(),
 	)
 	if err != nil {
 		log.Fatal("failed to init postgres connection pool", zap.Error(err))
@@ -46,8 +47,8 @@ func main() {
 		log,
 		core_http_middleware.RequestID(),
 		core_http_middleware.Logger(log),
-		core_http_middleware.Panic(),
 		core_http_middleware.Trace(),
+		core_http_middleware.Panic(),
 	)
 	httpServer.RegisterAPiRouter(ApiVersionRouter)
 	if err := httpServer.Run(ctx); err != nil {

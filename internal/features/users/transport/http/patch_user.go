@@ -9,7 +9,6 @@ import (
 	core_logger "github.com/XZSDFVB213/golang-todoapp/internal/core/logger"
 	core_http_request "github.com/XZSDFVB213/golang-todoapp/internal/core/transport/http/request"
 	core_http_types "github.com/XZSDFVB213/golang-todoapp/internal/core/transport/http/types"
-	core_http_utils "github.com/XZSDFVB213/golang-todoapp/internal/core/transport/http/utils"
 
 	// core_http_utils "github.com/XZSDFVB213/golang-todoapp/internal/core/transport/http/utils"
 	core_http_response "github.com/XZSDFVB213/golang-todoapp/internal/core/transport/response"
@@ -50,7 +49,7 @@ func (h *UsersHTTPHandler) PatchUser(rw http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 	logger := core_logger.FromContext(ctx)
 	responseHandler := core_http_response.NewHTTPResponseHandler(logger, rw)
-	userId, err := core_http_utils.GetIntPathValue(r, "id")
+	userId, err := core_http_request.GetIntPathValue(r, "id")
 	if err != nil {
 		responseHandler.ErrorResponse(err, "Failed to get userId from path")
 		return
@@ -70,8 +69,8 @@ func (h *UsersHTTPHandler) PatchUser(rw http.ResponseWriter, r *http.Request) {
 	responseHandler.JSONResponse(response, http.StatusOK)
 }
 func UserPatchFromRequest(request PatchUserRequest) domain.UserPatch {
-	return domain.UserPatch{
-		Fullname:    request.FullName.ToDomain(),
-		PhoneNumber: request.PhoneNumber.ToDomain(),
-	}
+	return domain.NewUserPatch(
+		request.FullName.ToDomain(),
+		request.PhoneNumber.ToDomain(),
+	)
 }
